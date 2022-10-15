@@ -21,3 +21,9 @@
 	"dimensoes": "desconhecidas",
 	"peso_produto": 100
 }
+
+### DELETE http://localhost:3000/equipamentos
+
+{
+    "id": 1
+}
