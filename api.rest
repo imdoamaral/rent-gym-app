@@ -1,0 +1,10 @@
+### POST http://localhost:3000/equipamentos Content-Type: application/json
+
+{
+	"nome": "supino reto",
+	"valor": 2000,
+	"grupo_muscular": "peito",
+	"categoria": "musculação",
+	"dimensoes": "desconhecidas",
+	"peso_produto": 100
+}
