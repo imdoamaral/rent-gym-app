@@ -1,0 +1,23 @@
+Table equipamento as EQ {
+  id int [pk, increment] // auto-increment
+  nome varchar
+  valor float
+  grupo_muscular varchar
+  dimensoes varchar
+  peso_produto float
+  created_at timestamp
+}
+
+Table usuario as U {
+  id int [pk, increment]
+  nome varchar
+  email varchar
+  password varchar
+  created_at timestamp
+}
+
+Table rel_equipamento_user as REU {
+  id int [pk, increment]
+  user_id int [ref: > U.id]
+  equipamento_id int [ref: > EQ.id]
+}
