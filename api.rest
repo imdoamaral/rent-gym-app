@@ -1,5 +1,4 @@
 ### POST http://localhost:3000/equipamentos Content-Type: application/json
-
 {
 	"nome": "supino reto",
 	"valor": 2000,
@@ -12,3 +11,13 @@
 ### GET http://localhost:3000/equipamentos
 
 ### GET http://localhost:3000/equipamentos/1
+
+### PUT http://localhost:3000/equipamentos
+{
+	"nome": "supino INCLINADO",
+	"valor": 2000,
+	"grupo_muscular": "peito",
+	"categoria": "musculação",
+	"dimensoes": "desconhecidas",
+	"peso_produto": 100
+}

@@ -9,15 +9,18 @@ import { Router } from "express";
 import { CreateEquipamentoController } from "../controllers/equipamentos/CreateEquipamentoController";
 import { GetAllEquipamentosController } from "../controllers/equipamentos/GetAllEquipamentosController";
 import { GetEquipamentoByIdController } from "../controllers/equipamentos/GetEquipamentoByIdController";
+import { UpdateEquipamentoController } from "../controllers/equipamentos/UpdateEquipamentoController";
 
 const equipamentoRouter = Router();
 
 const createEquipamentoController = new CreateEquipamentoController();
 const getAllEquipamentosController = new GetAllEquipamentosController();
 const getEquipamentoByIdController = new GetEquipamentoByIdController();
+const updateEquipamentoController = new UpdateEquipamentoController();
 
 equipamentoRouter.post('/equipamentos', createEquipamentoController.handle);
 equipamentoRouter.get('/equipamentos', getAllEquipamentosController.handle);
 equipamentoRouter.get('/equipamentos/:id', getEquipamentoByIdController.handle);
+equipamentoRouter.put('/equipamentos', updateEquipamentoController.handle);
 
 export { equipamentoRouter }
