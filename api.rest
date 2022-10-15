@@ -8,3 +8,5 @@
 	"dimensoes": "desconhecidas",
 	"peso_produto": 100
 }
+
+### GET http://localhost:3000/equipamentos
