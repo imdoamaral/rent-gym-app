@@ -1,3 +1,10 @@
+/**
+* 
+* Arquivo: src/controllers/GetAllEquipamentosController.ts
+* Descrição: método responsável LISTAR todos Equipamentos
+*
+*/
+
 import { Request, response, Response } from "express";
 import { prismaClient } from "../../repositories/UserRepository";
 

@@ -1,3 +1,10 @@
+/**
+* 
+* Arquivo: src/controllers/GetEquipamentoByIdController.ts
+* Descrição: método responsável ATUALIZAR um Equipamento
+*
+*/
+
 import { Request, Response } from "express";
 import { prismaClient } from "../../repositories/UserRepository";
 

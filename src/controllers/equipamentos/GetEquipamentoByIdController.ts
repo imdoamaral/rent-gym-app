@@ -1,3 +1,10 @@
+/**
+* 
+* Arquivo: src/controllers/GetEquipamentoByIdController.ts
+* Descrição: método responsável LISTAR 1 (um) Equipamento pelo seu ID
+*
+*/
+
 import { Request, Response } from "express";
 import { prismaClient } from "../../repositories/UserRepository";
 
