@@ -1,9 +1,9 @@
 /**
- * 
- * Para importar e utilizar o módulo de conexão com o BD em qualquer arquivo, faça:
- * import { prismaClient } from "../../repositories/UserRepository.ts";
- * 
- */
+* 
+* Arquivo: UserRepository.ts
+* Descrição: arquivo responsável pela conexão da aplicação com o SQLite.
+*
+*/
 
 import { PrismaClient } from "@prisma/client";
 
