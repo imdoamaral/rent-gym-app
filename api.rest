@@ -10,3 +10,5 @@
 }
 
 ### GET http://localhost:3000/equipamentos
+
+### GET http://localhost:3000/equipamentos/1
