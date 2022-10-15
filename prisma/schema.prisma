@@ -1,0 +1,46 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Equipamento {
+  id           Int      @id @default(autoincrement())
+  nome         String
+  valor        Float
+  dimensoes    String
+  peso_produto Float
+  created_at   DateTime @default(now())
+
+  Rel_equipamento_usuario Rel_equipamento_usuario[]
+
+  @@map("equipamentos")
+}
+
+model Usuario {
+  id         Int      @id @default(autoincrement())
+  nome       String
+  email      String   @unique
+  password   String
+  created_at DateTime @default(now())
+
+  Rel_equipamento_usuario Rel_equipamento_usuario[]
+
+  @@map("usuarios")
+}
+
+model Rel_equipamento_usuario {
+  id Int @id @default(autoincrement())
+
+  equipamento_id Int
+  equipamento    Equipamento @relation(fields: [equipamento_id], references: [id])
+
+  usuario_id Int
+  usuario    Usuario @relation(fields: [usuario_id], references: [id])
+}
