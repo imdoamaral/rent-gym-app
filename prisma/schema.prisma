@@ -11,12 +11,14 @@ datasource db {
 }
 
 model Equipamento {
-  id           Int      @id @default(autoincrement())
-  nome         String
-  valor        Float
-  dimensoes    String
-  peso_produto Float
-  created_at   DateTime @default(now())
+  id             Int      @id @default(autoincrement())
+  nome           String
+  valor          Float
+  grupo_muscular String
+  categoria      String
+  dimensoes      String
+  peso_produto   Float
+  created_at     DateTime @default(now())
 
   Rel_equipamento_usuario Rel_equipamento_usuario[]
 
