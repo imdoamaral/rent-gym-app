@@ -11,6 +11,7 @@ import { GetAllEquipamentosController } from "../controllers/equipamentos/GetAll
 import { GetEquipamentoByIdController } from "../controllers/equipamentos/GetEquipamentoByIdController";
 import { UpdateEquipamentoController } from "../controllers/equipamentos/UpdateEquipamentoController";
 import { DeleteEquipamentoController } from "../controllers/equipamentos/DeleteEquipamentoController";
+import { AuthMiddleware } from "../middlewares/AuthMiddleware";
 
 const equipamentoRouter = Router();
 
@@ -19,11 +20,26 @@ const getAllEquipamentosController = new GetAllEquipamentosController();
 const getEquipamentoByIdController = new GetEquipamentoByIdController();
 const updateEquipamentoController = new UpdateEquipamentoController();
 const deleteEquipamentoController = new DeleteEquipamentoController();
+const authMiddleware = new AuthMiddleware();
 
-equipamentoRouter.post('/equipamentos', createEquipamentoController.handle);
+// Rotas que não precisam de autenticação
 equipamentoRouter.get('/equipamentos', getAllEquipamentosController.handle);
 equipamentoRouter.get('/equipamentos/:id', getEquipamentoByIdController.handle);
-equipamentoRouter.put('/equipamentos', updateEquipamentoController.handle);
-equipamentoRouter.delete('/equipamentos', deleteEquipamentoController.handle);
+
+// Rotas que precisam de autenticação
+equipamentoRouter.post('/equipamentos',
+    authMiddleware.handle,
+    createEquipamentoController.handle
+);
+
+equipamentoRouter.put('/equipamentos',
+    authMiddleware.handle,
+    updateEquipamentoController.handle
+);
+
+equipamentoRouter.delete('/equipamentos',
+    authMiddleware.handle,
+    deleteEquipamentoController.handle
+);
 
 export { equipamentoRouter }
