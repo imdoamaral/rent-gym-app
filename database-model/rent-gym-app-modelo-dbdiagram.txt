@@ -3,6 +3,7 @@ Table equipamento as EQ {
   nome varchar
   valor float
   grupo_muscular varchar
+  categoria varchar
   dimensoes varchar
   peso_produto float
   created_at timestamp
