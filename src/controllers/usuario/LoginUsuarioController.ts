@@ -40,7 +40,7 @@ export class LoginUsuarioController {
             loginDate: Date()
         }
         
-        const token = jwt.sign(data, process.env.JWT_SECRET_KEY as string, { expiresIn: '1h' });
+        const token = jwt.sign(data, process.env.JWT_SECRET_KEY!, { expiresIn: '1h' });
 
         response.send({
             nome: usuario.nome,
