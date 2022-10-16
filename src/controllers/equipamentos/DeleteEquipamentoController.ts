@@ -1,7 +1,7 @@
 /**
 * 
 * Arquivo: src/controllers/CreateEquipamentoController.ts
-* Descrição: arquivo responsável DELETAR um Equipamento
+* Descrição: método responsável DELETAR um Equipamento
 *
 */
 

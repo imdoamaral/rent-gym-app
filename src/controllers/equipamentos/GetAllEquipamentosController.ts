@@ -5,7 +5,7 @@
 *
 */
 
-import { Request, response, Response } from "express";
+import { Request, Response } from "express";
 import { prismaClient } from "../../repositories/UserRepository";
 
 export class GetAllEquipamentosController {
