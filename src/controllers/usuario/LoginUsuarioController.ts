@@ -1,7 +1,7 @@
 /**
 * 
 * Arquivo: src/controllers/LoginUsuarioController.ts
-* Descrição: arquivo responsável LOGAR um usuário
+* Descrição: método responsável LOGAR um usuário
 *
 */
 
@@ -40,8 +40,6 @@ export class LoginUsuarioController {
             loginDate: Date()
         }
         
-        // process.env.JWT_SECRET_KEY = 'baiano';
-
         const token = jwt.sign(data, process.env.JWT_SECRET_KEY as string, { expiresIn: '1h' });
 
         response.send({

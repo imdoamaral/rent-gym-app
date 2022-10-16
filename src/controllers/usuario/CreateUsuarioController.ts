@@ -1,7 +1,7 @@
 /**
 * 
 * Arquivo: src/controllers/CreateUsuarioController.ts
-* Descrição: arquivo responsável CRIAR um novo usuário
+* Descrição: método responsável CRIAR um novo usuário
 *
 */
 
@@ -34,7 +34,7 @@ export class CreateUsuarioController {
             return response.status(400).json({
                 message: "Erro na inclusão do usuário.",
                 error: error.message
-            })
+            });
         }
     }
 }
