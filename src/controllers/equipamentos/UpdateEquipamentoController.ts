@@ -1,6 +1,6 @@
 /**
 * 
-* Arquivo: src/controllers/GetEquipamentoByIdController.ts
+* Arquivo: src/controllers/equipamentos/UpdateEquipamentoByIdController.ts
 * Descrição: método responsável ATUALIZAR um Equipamento
 *
 */

@@ -1,7 +1,7 @@
 /**
 * 
-* Arquivo: src/controllers/CreateUsuarioController.ts
-* Descrição: método responsável CRIAR um novo usuário
+* Arquivo: src/controllers/usuario/CreateUsuarioController.ts
+* Descrição: método responsável CRIAR um novo usuário no Banco de Dados
 *
 */
 

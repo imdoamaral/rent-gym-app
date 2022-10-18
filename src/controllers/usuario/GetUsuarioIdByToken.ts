@@ -1,7 +1,7 @@
 /**
 * 
-* Arquivo: src/controllers/GetUsuarioIdByToken.ts
-* Descrição: esse método recebe um token codificado e o retorna decodificado
+* Arquivo: src/controllers/usuario/GetUsuarioIdByToken.ts
+* Descrição: esse método recebe um token de usuário codificado e o retorna decodificado
 *
 */
 

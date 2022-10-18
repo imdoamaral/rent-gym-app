@@ -1,6 +1,6 @@
 /**
 * 
-* Arquivo: src/controllers/GetEquipamentoByIdController.ts
+* Arquivo: src/controllers/equipamentos/GetEquipamentoByIdController.ts
 * Descrição: método responsável LISTAR 1 (um) Equipamento pelo seu ID
 *
 */
