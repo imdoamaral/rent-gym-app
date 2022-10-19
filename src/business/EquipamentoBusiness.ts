@@ -1,15 +1,10 @@
-import { UserRepository } from './../repositories/UserRepository';
-import { Factory } from './../models/factories/Factory';
 import { EquipamentoRepository } from './../repositories/EquipamentoRepository';
 
 export class EquipamentoBusiness {
-  equipamentoRepository: EquipamentoRepository
-  factory = new Factory()
-  userRepository: UserRepository
+  private equipamentoRepository: EquipamentoRepository
 
-  constructor(equipamentoRepository: EquipamentoRepository, userRepository: UserRepository){
+  constructor(equipamentoRepository: EquipamentoRepository){
     this.equipamentoRepository = equipamentoRepository
-    this.userRepository = userRepository
   }
 
   getEquipamento(id: number){

@@ -8,9 +8,9 @@ const factory = new Factory()
 
 export class AluguelBusiness {
 
-  equipamentoRepository: EquipamentoRepository
-  aluguelRepository: AluguelRepository
-  userRepository: UserRepository
+  private equipamentoRepository: EquipamentoRepository
+  private aluguelRepository: AluguelRepository
+  private userRepository: UserRepository
 
   constructor(equipamentoRepository: EquipamentoRepository, aluguelRepository: AluguelRepository, userRepository: UserRepository){
     this.equipamentoRepository = equipamentoRepository

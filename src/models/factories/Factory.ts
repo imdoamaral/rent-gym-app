@@ -1,5 +1,5 @@
 import { Aluguel } from './../Aluguel';
-import { Esteira, Eliptico, Bicicleta, Acessorio, Musculacao } from './../Aparelho';
+import { Esteira, Eliptico, Bicicleta, Acessorio, Musculacao, Aparelho } from './../Aparelho';
 import { Equipamento } from "@prisma/client"
 
 interface AbstractFactory {
@@ -8,6 +8,8 @@ interface AbstractFactory {
   createBicicleta(id: number, nome: string, valor: number, dimensoes: string, grupo_muscular: string, peso_produto: number, categoria: string, created_at: Date): Bicicleta
   createAcessorio(id: number, nome: string, valor: number, dimensoes: string, grupo_muscular: string, peso_produto: number, categoria: string, created_at: Date): Acessorio
   createMusculacao(id: number, nome: string, valor: number, dimensoes: string, grupo_muscular: string, peso_produto: number, categoria: string, created_at: Date): Musculacao
+  createEquipamento(id: number, nome: string, valor: number, dimensoes: string, grupo_muscular: string, peso_produto: number, categoria: string, created_at: Date): Aparelho
+  createAluguel(userName: string, equipamentos: Equipamento[]): Aluguel
 }
 
 export class Factory implements AbstractFactory {
@@ -31,7 +33,7 @@ export class Factory implements AbstractFactory {
     return new Musculacao(id, nome, valor, dimensoes, grupo_muscular, peso_produto, categoria, created_at)
   }
 
-  createEquipamento(id: number, nome: string, valor: number, dimensoes: string, grupo_muscular: string, peso_produto: number, categoria: string, created_at: Date): Equipamento {
+  createEquipamento(id: number, nome: string, valor: number, dimensoes: string, grupo_muscular: string, peso_produto: number, categoria: string, created_at: Date): Aparelho {
     switch(categoria){
       case "esteira":
         return this.createEsteira(id, nome, valor, dimensoes, grupo_muscular, peso_produto, categoria, created_at)
@@ -47,7 +49,7 @@ export class Factory implements AbstractFactory {
     }
   }
 
-  createAluguel(userName: string, equipamentos: Equipamento[]){
+  createAluguel(userName: string, equipamentos: Equipamento[]): Aluguel{
     return new Aluguel(userName, equipamentos)
   }
 }

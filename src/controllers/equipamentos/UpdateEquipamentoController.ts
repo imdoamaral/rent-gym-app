@@ -1,4 +1,3 @@
-import { UserRepository } from './../../repositories/UserRepository';
 import { EquipamentoRepository } from './../../repositories/EquipamentoRepository';
 import { EquipamentoBusiness } from './../../business/EquipamentoBusiness';
 /**
@@ -11,12 +10,11 @@ import { EquipamentoBusiness } from './../../business/EquipamentoBusiness';
 import { Request, Response } from "express";
 
 const equipamentoRepository: EquipamentoRepository = new EquipamentoRepository()
-const userRepository: UserRepository = UserRepository.getInstance()
 
 export class UpdateEquipamentoController {
 
     async handle(request: Request, response: Response) {
-        const equipamentoBusiness = new EquipamentoBusiness(equipamentoRepository, userRepository)
+        const equipamentoBusiness = new EquipamentoBusiness(equipamentoRepository)
 
         const equipamento = await equipamentoBusiness.updateEquipamento(request.body)
 
