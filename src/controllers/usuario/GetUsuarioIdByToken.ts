@@ -1,3 +1,10 @@
+/**
+* 
+* Arquivo: src/controllers/usuario/GetUsuarioIdByToken.ts
+* Descrição: esse método recebe um token de usuário codificado e o retorna decodificado
+*
+*/
+
 import { Request, Response } from "express";
 import jwt from 'jsonwebtoken';
 

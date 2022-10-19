@@ -1,7 +1,7 @@
 /**
 * 
-* Arquivo: src/controllers/LoginUsuarioController.ts
-* Descrição: método responsável LOGAR um usuário
+* Arquivo: src/controllers/usuario/LoginUsuarioController.ts
+* Descrição: esse método gera um token de acesso para o usuário
 *
 */
 

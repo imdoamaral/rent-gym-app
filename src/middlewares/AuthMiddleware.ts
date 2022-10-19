@@ -1,3 +1,10 @@
+/**
+* 
+* Arquivo: src/middlewares/AuthMiddleware.ts
+* Descrição: método responsável por verificar se o token de acesso do usuário é válido
+*
+*/
+
 import { NextFunction, Request, Response } from 'express';
 import jwt from 'jsonwebtoken';
 

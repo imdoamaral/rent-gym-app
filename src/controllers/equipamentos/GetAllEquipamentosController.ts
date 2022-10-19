@@ -1,7 +1,7 @@
 import { EquipamentoBusiness } from './../../business/EquipamentoBusiness';
 /**
 * 
-* Arquivo: src/controllers/GetAllEquipamentosController.ts
+* Arquivo: src/controllers/equipamentos/GetAllEquipamentosController.ts
 * Descrição: método responsável LISTAR todos Equipamentos
 *
 */

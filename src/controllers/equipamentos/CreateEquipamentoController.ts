@@ -1,6 +1,6 @@
 /**
 * 
-* Arquivo: src/controllers/CreateEquipamentoController.ts
+* Arquivo: src/controllers/equipamentos/CreateEquipamentoController.ts
 * Descrição: método responsável CRIAR um novo Equipamento
 *
 */

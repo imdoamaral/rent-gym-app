@@ -1,6 +1,13 @@
+/**
+ * 
+ * Arquivo: src/repositories/UserRepository.ts
+ * Descrição: arquivo responsável pela conexão da aplicação com o SQLite.
+ *
+ */
+
+
 import { User } from "../models/User"
 import prismaClient from "./PrismaClient"
-
 export class UserRepository {
   private loggedUser: User | null = null
   private static instance: UserRepository | null = null

@@ -2,8 +2,8 @@ import { UserRepository } from './../../repositories/UserRepository';
 import { Request, Response } from "express";
 /**
 * 
-* Arquivo: src/controllers/CreateUsuarioController.ts
-* Descrição: método responsável CRIAR um novo usuário
+* Arquivo: src/controllers/usuario/CreateUsuarioController.ts
+* Descrição: método responsável CRIAR um novo usuário no Banco de Dados
 *
 */
 

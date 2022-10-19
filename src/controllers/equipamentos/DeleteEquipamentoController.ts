@@ -1,7 +1,7 @@
 import { EquipamentoBusiness } from './../../business/EquipamentoBusiness';
 /**
 * 
-* Arquivo: src/controllers/CreateEquipamentoController.ts
+* Arquivo: src/controllers/equipamentos/DeleteEquipamentoController.ts
 * Descrição: método responsável DELETAR um Equipamento
 *
 */
