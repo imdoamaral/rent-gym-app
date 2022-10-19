@@ -1,40 +1,19 @@
+import { EquipamentoBusiness } from './../../business/EquipamentoBusiness';
 /**
 * 
-* Arquivo: src/controllers/GetEquipamentoByIdController.ts
+* Arquivo: src/controllers/equipamentos/UpdateEquipamentoByIdController.ts
 * Descrição: método responsável ATUALIZAR um Equipamento
 *
 */
 
 import { Request, Response } from "express";
-import { prismaClient } from "../../repositories/UserRepository";
-
+import prismaClient from "../../repositories/PrismaClient";
 export class UpdateEquipamentoController {
 
     async handle(request: Request, response: Response) {
+        const equipamentoBusiness = new EquipamentoBusiness()
 
-        const { id, 
-                nome,
-                valor,
-                grupo_muscular,
-                categoria,
-                dimensoes,
-                peso_produto
-
-        } = request.body;
-
-        const equipamento = await prismaClient.equipamento.update({
-            where: {
-                id: id
-            },
-            data: {
-                nome,
-                valor,
-                grupo_muscular,
-                categoria,
-                dimensoes,
-                peso_produto
-            }
-        });
+        const equipamento = await equipamentoBusiness.updateEquipamento(request.body)
 
         return response.json(equipamento);
     }

@@ -1,36 +1,17 @@
 /**
 * 
-* Arquivo: src/controllers/CreateEquipamentoController.ts
+* Arquivo: src/controllers/equipamentos/CreateEquipamentoController.ts
 * Descrição: método responsável CRIAR um novo Equipamento
 *
 */
 
 import { Request, Response } from "express";
-import { prismaClient } from "../../repositories/UserRepository";
+import { EquipamentoBusiness } from "../../business/EquipamentoBusiness";
 
 export class CreateEquipamentoController {
-
     async handle(request : Request, response: Response) {
-
-        const { nome,
-            valor,
-            grupo_muscular,
-            categoria,
-            dimensoes,
-            peso_produto
-
-        } = request.body;
-
-        const equipamento = await prismaClient.equipamento.create({
-            data: {
-                nome,
-                valor,
-                grupo_muscular,
-                categoria,
-                dimensoes,
-                peso_produto
-            }
-        });
+        const equipamentoBusiness = new EquipamentoBusiness()
+        const equipamento = await equipamentoBusiness.createEquipamento(request.body)
 
         return response.json(equipamento);
     }

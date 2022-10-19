@@ -1,25 +1,24 @@
+import { EquipamentoBusiness } from './../../business/EquipamentoBusiness';
 /**
 * 
-* Arquivo: src/controllers/CreateEquipamentoController.ts
+* Arquivo: src/controllers/equipamentos/DeleteEquipamentoController.ts
 * Descrição: método responsável DELETAR um Equipamento
 *
 */
 
 import { Request, Response } from "express";
-import { prismaClient } from "../../repositories/UserRepository";
+import prismaClient from '../../repositories/PrismaClient';
 
 export class DeleteEquipamentoController {
 
-    async handle(request: Request, response: Response) {
+  equipamentoRepository = new EquipamentoBusiness()
 
+    async handle(request: Request, response: Response) {
+        const equipamentoBusiness = new EquipamentoBusiness()
         const { id } = request.body;
 
         try {
-            const equipamento = await prismaClient.equipamento.delete({
-                where: {
-                    id: id
-                }
-            });
+            const equipamento = equipamentoBusiness.deleteEquipamento(id)
 
             return response.json(equipamento);
 
