@@ -1,3 +1,5 @@
+import { UserRepository } from './../../repositories/UserRepository';
+import { Request, Response } from "express";
 /**
 * 
 * Arquivo: src/controllers/CreateUsuarioController.ts
@@ -5,23 +7,16 @@
 *
 */
 
-import { Request, Response } from "express";
-import { prismaClient } from "../../repositories/UserRepository";
 
 export class CreateUsuarioController {
 
     async handle(request: Request, response: Response) {
 
+        const userRepository = UserRepository.getInstance()
         const { nome, email, password } = request.body;
 
         try {
-            const usuario = await prismaClient.usuario.create({
-                data: {
-                    nome,
-                    email,
-                    password
-                }
-            });
+            const usuario = await userRepository.createUser(nome, email, password)
 
             return response.json({
                 id: usuario.id,

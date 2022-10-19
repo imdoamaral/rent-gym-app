@@ -1,51 +1,55 @@
-class Aparelho {
-  id?: number
+export class Aparelho {
+  id: number
   nome: string
   valor: number
   dimensoes: string
   peso_produto: number
   grupo_muscular: string
+  categoria: string
+  created_at: Date
 
-  constructor(id: number = 0, nome: string, valor: number, dimensoes: string, grupo_muscular: string, peso_produto: number){
+  constructor(id: number = 0, nome: string, valor: number, dimensoes: string, grupo_muscular: string, peso_produto: number, categoria: string, created_at: Date){
     this.id = id
     this.nome = nome
     this.valor = valor
     this.dimensoes = dimensoes
     this.peso_produto = peso_produto
     this.grupo_muscular = grupo_muscular
-  }
-
-  toString(): string{
-    return ""
-  }
-}
-
-class Esteira extends Aparelho {
-  constructor(id: number, nome: string, valor: number, dimensoes: string, grupo_muscular: string, peso_produto: number){
-    super(id, nome, valor, dimensoes, grupo_muscular, peso_produto)
+    this.categoria = categoria
+    this.created_at = created_at
   }
 
   toString(): string {
-    return `O valor dessa esteira é R$ ${this.valor}` 
+    return `O valor desse aparelho é R$ ${this.valor}` 
   }
 }
 
-class Halter extends Aparelho {
-  constructor(id: number, nome: string, valor: number, dimensoes: string, grupo_muscular: string, peso_produto: number){
-    super(id, nome, valor, dimensoes, grupo_muscular, peso_produto)
-  }
-
-  toString(): string {
-    return `O valor desse halter é R$ ${this.valor}` 
+export class Esteira extends Aparelho {
+  constructor(id: number, nome: string, valor: number, dimensoes: string, grupo_muscular: string, peso_produto: number, categoria: string, created_at: Date){
+    super(id, nome, valor, dimensoes, grupo_muscular, peso_produto, categoria, created_at)
   }
 }
 
-class BarraReta extends Aparelho {
-  constructor(id: number, nome: string, valor: number, dimensoes: string, grupo_muscular: string, peso_produto: number){
-    super(id, nome, valor, dimensoes, grupo_muscular, peso_produto)
+export class Eliptico extends Aparelho {
+  constructor(id: number, nome: string, valor: number, dimensoes: string, grupo_muscular: string, peso_produto: number, categoria: string, created_at: Date){
+    super(id, nome, valor, dimensoes, grupo_muscular, peso_produto, categoria, created_at)
   }
+}
 
-  toString(): string {
-    return `O valor dessa barra reta é R$ ${this.valor}` 
+export class Bicicleta extends Aparelho {
+  constructor(id: number, nome: string, valor: number, dimensoes: string, grupo_muscular: string, peso_produto: number, categoria: string, created_at: Date){
+    super(id, nome, valor, dimensoes, grupo_muscular, peso_produto, categoria, created_at)
+  }
+}
+
+export class Acessorio extends Aparelho {
+  constructor(id: number, nome: string, valor: number, dimensoes: string, grupo_muscular: string, peso_produto: number, categoria: string, created_at: Date){
+    super(id, nome, valor, dimensoes, grupo_muscular, peso_produto, categoria, created_at)
+  }
+}
+
+export class Musculacao extends Aparelho {
+  constructor(id: number, nome: string, valor: number, dimensoes: string, grupo_muscular: string, peso_produto: number, categoria: string, created_at: Date){
+    super(id, nome, valor, dimensoes, grupo_muscular, peso_produto, categoria, created_at)
   }
 }
