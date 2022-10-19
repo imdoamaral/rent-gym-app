@@ -18,8 +18,8 @@ export class UserRepository {
   static getInstance() {
     if(UserRepository.instance != null)
       return UserRepository.instance
-    
-    return new UserRepository();
+    this.instance = new UserRepository()
+    return this.instance;
   }
 
   async login(email: string): Promise<User | null> {

@@ -3,10 +3,8 @@ import {expect, test} from '@jest/globals';
 import equipamentoRepository, { reqBodyCreate, reqBodyUpdate} from '../../__mocks__/EquipamentoRepository'
 import { UserRepository } from '../../src/repositories/UserRepository';
 
-const userRepository = UserRepository.getInstance()
-
 describe("EquipamentoBusiness.ts test", () => {
-  const equipamentoBusiness = new EquipamentoBusiness(equipamentoRepository, userRepository)
+  const equipamentoBusiness = new EquipamentoBusiness(equipamentoRepository)
   test("Get All Equipments", async () => {
     const res = await equipamentoBusiness.getAllEquipamentos()
     expect(equipamentoRepository.listAllEquipamentos).toHaveBeenCalledTimes(1)
