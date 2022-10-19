@@ -9,7 +9,6 @@
 import { User } from "../models/User"
 import prismaClient from "./PrismaClient"
 export class UserRepository {
-  private loggedUser: User | null = null
   private static instance: UserRepository | null = null
 
   private constructor(){
@@ -31,8 +30,6 @@ export class UserRepository {
     });
 
     const user = response ? new User(response.id, response.nome, response.email, response.password, response.created_at) : null
-
-    this.setLoggedUser(user)
 
     return user
   }
@@ -58,15 +55,4 @@ export class UserRepository {
 
     return new User(usuario.id, usuario.nome, usuario.email, usuario.password, usuario.created_at)
   }
-
-  private setLoggedUser(user: User | null) {
-    console.log(user)
-    this.loggedUser = user
-  }
-
-  getLoggedUser(): User | null {
-    return this.loggedUser
-  }
-
-
 }

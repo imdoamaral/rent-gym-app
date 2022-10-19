@@ -1,12 +1,16 @@
-import { Equipamento } from '@prisma/client';
 import { UserRepository } from './../repositories/UserRepository';
 import { Factory } from './../models/factories/Factory';
 import { EquipamentoRepository } from './../repositories/EquipamentoRepository';
 
 export class EquipamentoBusiness {
-  equipamentoRepository = new EquipamentoRepository()
+  equipamentoRepository: EquipamentoRepository
   factory = new Factory()
-  userRepository = UserRepository.getInstance()
+  userRepository: UserRepository
+
+  constructor(equipamentoRepository: EquipamentoRepository, userRepository: UserRepository){
+    this.equipamentoRepository = equipamentoRepository
+    this.userRepository = userRepository
+  }
 
   getEquipamento(id: number){
     return this.equipamentoRepository.getEquipamento(id)

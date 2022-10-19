@@ -1,3 +1,5 @@
+import { UserRepository } from './../../repositories/UserRepository';
+import { EquipamentoRepository } from './../../repositories/EquipamentoRepository';
 import { EquipamentoBusiness } from './../../business/EquipamentoBusiness';
 /**
 * 
@@ -7,14 +9,14 @@ import { EquipamentoBusiness } from './../../business/EquipamentoBusiness';
 */
 
 import { Request, Response } from "express";
-import prismaClient from '../../repositories/PrismaClient';
+
+const equipamentoRepository: EquipamentoRepository = new EquipamentoRepository()
+const userRepository: UserRepository = UserRepository.getInstance()
 
 export class DeleteEquipamentoController {
 
-  equipamentoRepository = new EquipamentoBusiness()
-
     async handle(request: Request, response: Response) {
-        const equipamentoBusiness = new EquipamentoBusiness()
+        const equipamentoBusiness = new EquipamentoBusiness(equipamentoRepository, userRepository)
         const { id } = request.body;
 
         try {

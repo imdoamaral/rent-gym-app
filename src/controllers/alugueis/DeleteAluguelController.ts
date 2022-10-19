@@ -1,7 +1,14 @@
+import { UserRepository } from './../../repositories/UserRepository';
+import { AluguelRepository } from './../../repositories/AluguelRepository';
+import { EquipamentoRepository } from './../../repositories/EquipamentoRepository';
 import { AluguelBusiness } from './../../business/AluguelBusiness';
 import { Request, Response } from 'express';
 
-const aluguelBusiness = new AluguelBusiness()
+const equipamentoRepository: EquipamentoRepository = new EquipamentoRepository()
+const aluguelRepository: AluguelRepository = new AluguelRepository()
+const userRepository: UserRepository = UserRepository.getInstance()
+
+const aluguelBusiness = new AluguelBusiness(equipamentoRepository, aluguelRepository, userRepository)
 
 export class DeleteAluguelController {
   async handle(request: Request, response: Response){
